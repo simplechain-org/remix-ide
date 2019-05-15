@@ -1,5 +1,6 @@
 var yo = require('yo-yo')
 var css = require('./styles/tooltip-styles')
+var copyToClipboard = require('./copy-to-clipboard')
 
 /**
  * Open a tooltip
@@ -25,9 +26,11 @@ class Toaster {
     opts = defaultOptions(opts)
 
     return new Promise((resolve, reject) => {
+      const shortTooltipText = tooltipText.length > 201 ? tooltipText.substring(0, 200) + '...' : tooltipText
+
       this.tooltip = yo`
     <div class="${css.tooltip} bg-secondary" onmouseenter=${() => { over() }} onmouseleave=${() => { out() }}>
-      <span>${tooltipText}</span>
+      <span>${shortTooltipText}${copyToClipboard(() => tooltipText)}</span>
       ${action}
     </div>`
       let timeOut = () => {
