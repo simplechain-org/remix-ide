@@ -17,7 +17,7 @@ const addTooltip = require('../ui/tooltip')
 var helper = require('../../lib/helper')
 
 const styles = styleGuide.chooser()
-const LOCAL_SOLCJSON = '../../../soljson.js';
+const LOCAL_SOLCJSON = '../../../soljson.js'
 module.exports = class CompileTab {
   constructor (localRegistry) {
     const self = this
