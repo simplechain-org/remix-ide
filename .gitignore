@@ -4,6 +4,7 @@ node_modules
 reports
 soljson.js
 soljson.js.*
+soljson.*
 npm-debug.log*
 package-lock.json
 remix

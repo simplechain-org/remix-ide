@@ -17,7 +17,7 @@ const addTooltip = require('../ui/tooltip')
 var helper = require('../../lib/helper')
 
 const styles = styleGuide.chooser()
-
+const LOCAL_SOLCJSON = '../../../soljson.js';
 module.exports = class CompileTab {
   constructor (localRegistry) {
     const self = this
@@ -419,6 +419,7 @@ module.exports = class CompileTab {
       }
       url = `${self.data.baseurl}/${self.data.selectedVersion}`
     }
+    url = LOCAL_SOLCJSON
     var isFirefox = typeof InstallTrigger !== 'undefined'
     if (document.location.protocol !== 'file:' && Worker !== undefined && isFirefox) {
       // Workers cannot load js on "file:"-URLs and we get a
