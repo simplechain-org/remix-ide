@@ -8,7 +8,7 @@ FROM node:10
 COPY . ./home/remix
 WORKDIR /home/remix
 
-RUN npm install  --registry=https://registry.npm.taobao.org
+RUN npm install
 RUN npm run build
 
 FROM nginx:latest AS PROD
