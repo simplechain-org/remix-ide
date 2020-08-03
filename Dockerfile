@@ -11,7 +11,7 @@ WORKDIR /home/remix
 RUN npm install
 RUN npm run build
 
-FROM nginx:latest AS PROD
+FROM nginx:alpine AS PROD
 WORKDIR /usr/share/nginx/html
 
 COPY --from=0 /home/remix/build/ /usr/share/nginx/html/build/

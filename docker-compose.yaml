@@ -4,5 +4,5 @@ services:
     image: remix-ide:latest
     container_name: remixide-latest
     ports:
-      - 8080:80
+      - 80:80
       - 65520:65520
